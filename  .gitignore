@@ -1,0 +1,76 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# -------------------------
+# Package / build
+# -------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# -------------------------
+# Logs & runtime
+# -------------------------
+*.log
+*.out
+*.pid
+
+# -------------------------
+# Data files (adjust if needed)
+# -------------------------
+*.parquet
+*.h5
+*.hdf5
+to_start.txt
+
+# -------------------------
+# Jupyter
+# -------------------------
+.ipynb_checkpoints/
+test_code.ipynb
+
+# -------------------------
+# Environment variables
+# -------------------------
+.env
+.env.*
+*.env
+
+# -------------------------
+# IDE / Editor
+# -------------------------
+.vscode/
+.idea/
+*.swp
+
+# -------------------------
+# OS
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# Kafka
+kafka-logs/
+
+# Docker
+*.tar
+docker-compose.override.yml
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Local outputs
+dashboard_data/
+outputs/
