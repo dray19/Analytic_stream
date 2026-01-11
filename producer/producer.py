@@ -60,7 +60,7 @@ for (day, price_type, timestamp), g_min in df.groupby(
         print("Sent 5 minute event:", event.timestamp)
 
     except ValidationError as e:
-        print("❌ Invalid event, not sent to Kafka")
+        print("Invalid event, not sent to Kafka")
         print(e)
 
     time.sleep(4)

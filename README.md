@@ -4,9 +4,10 @@
 
 ---
 
+
 ## Features
 
-- **Real-time Streaming with Kafka**: Stream market price data efficiently.
+- **Real-time Streaming with Kafka Apache Flink**: Stream market price data efficiently.
 - **Data Validation**: Enforces schemas to ensure data integrity.
 - **Flexible Consumption**: Supports lightweight storage systems or real-time dashboards.
 - **Analytics and Visualization**: Gain insights with real-time data visualization.
@@ -40,16 +41,24 @@
    Check docker ps
 ```
 
-4. Create a topic in Kafka.
+4. Ensure Flink is setup.
+```bash
+   FLINK_HOME=$(./venv/bin/find_flink_home.py)
+   export PATH=$PATH:$FLINK_HOME/bin
+   ## if a version comes up everything is working
+   flink --version
+```
+
+5. Create a topic in Kafka.
 ```bash
    kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic market-events
    ### check 
    kafka-topics --list --bootstrap-server localhost:9092
 ```
 
-5. Activate the Python virtual environment. Open separate terminal windows to run the Kafka producer(s) and consumer(s), enabling live streaming of 5-minute data to the dashboard. 
+6. Activate the Python virtual environment. Open separate terminal windows to run Flink and the Kafka producer(s) and consumer(s), enabling live streaming of 5-minute data to the dashboard. 
 ```bash
-   python -m consumer.consumer_stats
+   flink run --python flink_job.py --target local --jarfile flink-sql-connector-kafka-4.0.1-2.0.jar
    python -m consumer.consumer_dashboard_csv
    python -m producer.producer
    ### Using streamlit as the dashboard
@@ -60,11 +69,12 @@
 
 ## Usage
 
-1. **Data Ingestion**:
-   - Stream time-series data into Kafka topics.
-2. **Data Validation**:
-   - Schemas ensure that incoming data conforms to predefined standards.
-3. **Real-time Insight**:
-   - Access the lightweight storage/database or explore the dashboard visualization in real time.
+1.	**Data Ingestion**
+	   - Stream time-series data into Kafka topics.
+2.	**Data Validation**
+	   - Schemas ensure that incoming data conforms to predefined standards.
+3.	**Stream Processing (Flink)**
+	   - Apache Flink consumes Kafka events, expands/normalizes nested records, and performs real-time aggregation/windowing.
+	   - Outputs processed results to a downstream Kafka topic for analytics + dashboards.
 
 ---

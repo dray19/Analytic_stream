@@ -34,6 +34,7 @@ dist/
 *.h5
 *.hdf5
 to_start.txt
+to_run.txt
 
 # -------------------------
 # Jupyter
