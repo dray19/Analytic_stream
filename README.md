@@ -1,16 +1,16 @@
 # Analytic_stream
 
-`Analytic_stream` is an end-to-end local analytics pipeline designed as a demo showing how market data is ingested, processed, and streamed in 5-minute intervals to a live dashboard. It integrates several technologies to provide an adaptable framework for validating, storing, and visualizing real-time time-series data as it arrives.
+`Analytic_stream` is a comprehensive local analytics pipeline designed to demonstrate the ingestion, processing, and streaming of market data. It operates in 5-minute intervals and streams the data to a live dashboard. This project integrates multiple technologies to provide a robust framework for validating, storing, and visualizing real-time time-series data in a seamless and efficient manner.
 
 ---
 
 
 ## Features
 
-- **Real-time Streaming with Kafka Apache Flink**: Stream market price data efficiently.
-- **Data Validation**: Enforces schemas to ensure data integrity.
-- **Flexible Consumption**: Supports lightweight storage systems or real-time dashboards.
-- **Analytics and Visualization**: Gain insights with real-time data visualization.
+- **Real-time Data Streaming**: Implements Kafka and Apache Flink for efficient streaming of market price data.
+- **Data Integrity Assurance**: Ensures data validity through schema enforcement.
+- **Flexible Deployment**: Adapts to lightweight storage solutions and real-time dashboard integration.
+- **Analytics and Visualization**: Provides actionable insights through real-time data visualization.
 
 ---
 
@@ -67,14 +67,19 @@
 
 ---
 
-## Usage
+## Usage and Workflow
 
-1.	**Data Ingestion**
-	   - Stream time-series data into Kafka topics.
-2.	**Data Validation**
-	   - Schemas ensure that incoming data conforms to predefined standards.
-3.	**Stream Processing (Flink)**
-	   - Apache Flink consumes Kafka events, expands/normalizes nested records, and performs real-time aggregation/windowing.
-	   - Outputs processed results to a downstream Kafka topic for analytics + dashboards.
+1. **Data Ingestion**
+   - Stream raw time-series data into Kafka topics.
+
+2. **Data Validation**
+   - Validate incoming data against predefined schemas to ensure quality and integrity.
+
+3. **Stream Processing with Flink**
+   - Apache Flink consumes Kafka events, normalizes nested records, and performs real-time aggregation and windowing.
+   - Processed results are published to a downstream Kafka topic for analytics and dashboard updates.
+
+4. **Real-time Dashboard**
+   - Visualize actionable insights via a modern dashboard built with Streamlit.
 
 ---
