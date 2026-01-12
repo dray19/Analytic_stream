@@ -1,6 +1,6 @@
 # Analytic_stream
 
-`Analytic_stream` is a comprehensive local analytics pipeline designed to demonstrate the ingestion, processing, and streaming of market data. It operates in 5-minute intervals and streams the data to a live dashboard. This project integrates multiple technologies to provide a robust framework for validating, storing, and visualizing real-time time-series data in a seamless and efficient manner.
+`Analytic_stream` is a simplified demo version of a real-time market data pipeline used to build stakeholder-facing dashboards. It streams 5-minute time-series market data to a live dashboard to demonstrate end-to-end ingestion, validation, processing, and visualization. In production, we run a similar but more advanced pipeline that pulls directly from the market operator’s API and includes additional quality checks, scaling, and infrastructure for real operational monitoring.
 
 ---
 
@@ -18,8 +18,9 @@
 
 ### Prerequisites
 
-- [Python 3.8+]
+- [Python 3.9+]
 - [Kafka]
+- [Flink]
 
 ### Installation
 
